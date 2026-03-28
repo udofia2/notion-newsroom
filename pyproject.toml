@@ -1,0 +1,90 @@
+[build-system]
+requires = ["hatchling>=1.25.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "notion-newsroom"
+version = "0.1.0"
+description = "Invisible AI workflow layer for Notion-powered newsroom operations via MCP"
+readme = "README.md"
+requires-python = ">=3.12"
+authors = [{ name = "Notion Newsroom OS Team" }]
+keywords = ["notion", "mcp", "ai", "newsroom", "automation"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Typing :: Typed",
+]
+dependencies = [
+    "fastapi>=0.135.2",
+    "fastmcp>=0.2.0",
+    "notion-client>=2.2.1",
+    "chromadb>=0.5.5",
+    "ollama>=0.4.4",
+    "apscheduler>=3.10.4",
+    "pydantic>=2.9.0",
+    "pydantic-settings>=2.4.0",
+    "python-dotenv>=1.0.1",
+    "structlog>=24.4.0",
+    "markdownify>=0.13.1",
+    "httpx>=0.27.2",
+    "aiofiles>=24.1.0",
+    "uvicorn[standard]>=0.30.6",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-org/notion-newsroom"
+Repository = "https://github.com/your-org/notion-newsroom"
+Issues = "https://github.com/your-org/notion-newsroom/issues"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.2",
+    "pytest-asyncio>=0.24.0",
+    "ruff>=0.6.3",
+    "mypy>=1.11.2",
+    "black>=24.8.0",
+]
+
+[tool.uv]
+default-groups = ["dev"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/newsroom"]
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests", "scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "N", "ASYNC", "RUF"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+disallow_any_generics = true
+show_error_codes = true
+pretty = true
+mypy_path = ["src"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q"
+testpaths = ["tests"]
+pythonpath = ["src"]
