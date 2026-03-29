@@ -140,7 +140,7 @@ async def _app_lifespan(app: Any):
         yield
 
 
-app = FastAPI(title="Notion Newsroom OS", version="0.1.0", lifespan=_app_lifespan)
+app = FastAPI(title="notion-newsroom", version="0.1.0", lifespan=_app_lifespan)
 
 if _mcp_asgi_app is not None:
     app.mount("/mcp", _mcp_asgi_app)
@@ -170,7 +170,7 @@ async def health_check() -> dict[str, Any]:
 @app.get("/")
 async def root() -> dict[str, str]:
     return {
-        "service": "Notion Newsroom OS",
+        "service": "notion-newsroom",
         "health": "/health",
         "mcp": "/mcp",
     }

@@ -194,7 +194,7 @@ def _heuristic_audit(draft_text: str, guide_text: str | None = None) -> AuditRes
     )
 
 
-app = FastMCP("Notion Newsroom OS")
+app = FastMCP("notion-newsroom")
 tool = app.tool
 
 

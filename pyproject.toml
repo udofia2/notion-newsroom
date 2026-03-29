@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Invisible AI workflow layer for Notion-powered newsroom operations via MCP"
 readme = "README.md"
 requires-python = ">=3.12"
-authors = [{ name = "Notion Newsroom OS Team" }]
+authors = [{ name = "notion-newsroom Team" }]
 keywords = ["notion", "mcp", "ai", "newsroom", "automation"]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -35,9 +35,9 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/your-org/notion-newsroom"
-Repository = "https://github.com/your-org/notion-newsroom"
-Issues = "https://github.com/your-org/notion-newsroom/issues"
+Homepage = "https://github.com/udofia2/notion-newsroom"
+Repository = "https://github.com/udofia2/notion-newsroom"
+Issues = "https://github.com/udofia2/notion-newsroom/issues"
 
 [dependency-groups]
 dev = [
